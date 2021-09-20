@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pay_small_small/commons/size_config.dart';
+import 'package:neo_reusables/src/commons/size_config.dart';
 
 class XMargin extends StatelessWidget {
 

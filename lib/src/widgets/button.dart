@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:neo_reusables/src/commons/size_config.dart';
+import 'package:neo_reusables/src/widgets/texts.dart';
 
 
 class XButton extends StatelessWidget {
@@ -47,7 +49,7 @@ class XButton extends StatelessWidget {
             onClick();
           }
         },
-        splashColor: XColors.selectedTabColor.withOpacity(0.5),
+        splashColor: Theme.of(context).accentColor.withOpacity(0.5),
         splashFactory: InkRipple.splashFactory,
         borderRadius: radius != null
             ? BorderRadius.circular(radius!)

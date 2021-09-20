@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pay_small_small/commons/colors.dart';
-import 'package:pay_small_small/commons/size_config.dart';
+import 'package:neo_reusables/src/commons/size_config.dart';
 
 class TitleText extends StatelessWidget {
   final String? text;
@@ -35,7 +34,7 @@ class TitleText extends StatelessWidget {
               : SizeConfig().sp(25).toDouble(),
           letterSpacing: letterSpacing ?? 0.8,
           height: lineHeight ?? 1.5,
-          color: textColor ?? XColors.normalTextColor,
+          color: textColor ?? Colors.black,
           fontWeight: fontWeight ?? FontWeight.w700),
     );
   }
@@ -77,7 +76,7 @@ class NormalText extends StatelessWidget {
           fontSize: fontSize != null
               ? SizeConfig().sp(fontSize).toDouble()
               : SizeConfig().sp(15).toDouble(),
-          color: textColor ?? XColors.normalTextColor,
+          color: textColor ?? Colors.black,
           fontWeight: fontWeight),
     );
   }
@@ -142,7 +141,7 @@ class AccentText extends StatelessWidget {
           fontSize: fontSize != null
               ? SizeConfig().sp(fontSize).toDouble()
               : SizeConfig().sp(15).toDouble(),
-          color: textColor ?? XColors.normalTextColor),
+          color: textColor ?? Colors.black),
     );
   }
 }
