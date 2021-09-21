@@ -1,3 +1,1 @@
-enum OperationStatus {
-  INACTIVE, LOADING, SUCCESSFUL, FAILED
-}
+enum NetworkStatus { idle, loading, successful, failed }

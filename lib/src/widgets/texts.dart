@@ -1,46 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:neo_reusables/src/commons/size_config.dart';
 
-class TitleText extends StatelessWidget {
-  final String? text;
-  final double? fontSize;
-  final Color? textColor;
-  final TextAlign? textAlign;
-  final int? maxLines;
-  final FontWeight? fontWeight;
-  final double? lineHeight;
-  final double? letterSpacing;
-
-  const TitleText(
-      {required this.text,
-      this.fontSize,
-      this.textColor,
-      this.textAlign,
-      this.maxLines,
-      this.lineHeight,
-      this.letterSpacing,
-      this.fontWeight});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text!,
-      maxLines: maxLines ?? 1,
-      overflow: TextOverflow.ellipsis,
-      textAlign: textAlign ?? TextAlign.start,
-      style: Theme.of(context).textTheme.headline1!.copyWith(
-          fontSize: fontSize != null
-              ? SizeConfig().sp(fontSize).toDouble()
-              : SizeConfig().sp(25).toDouble(),
-          letterSpacing: letterSpacing ?? 0.8,
-          height: lineHeight ?? 1.5,
-          color: textColor ?? Colors.black,
-          fontWeight: fontWeight ?? FontWeight.w700),
-    );
-  }
-}
-
-class NormalText extends StatelessWidget {
+class NeoText extends StatelessWidget {
   final String? text;
   final double? fontSize;
   final Color? textColor;
@@ -50,17 +10,21 @@ class NormalText extends StatelessWidget {
   final TextDecoration? decoration;
   final double? lineHeight;
   final double? letterSpacing;
+  final String? fontFamily;
 
-  const NormalText(
+  const NeoText(
       {required this.text,
       this.fontSize,
       this.textColor,
+      Key? key,
       this.textAlign,
       this.fontWeight,
       this.maxLines,
       this.lineHeight,
       this.letterSpacing,
-      this.decoration});
+      this.fontFamily,
+      this.decoration})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -69,79 +33,15 @@ class NormalText extends StatelessWidget {
       maxLines: maxLines ?? 1,
       overflow: TextOverflow.ellipsis,
       textAlign: textAlign ?? TextAlign.start,
-      style: Theme.of(context).textTheme.bodyText1!.copyWith(
-          decoration: decoration,
-          letterSpacing: letterSpacing ?? 0.25,
-          height: lineHeight ?? 1.5,
-          fontSize: fontSize != null
-              ? SizeConfig().sp(fontSize).toDouble()
-              : SizeConfig().sp(15).toDouble(),
-          color: textColor ?? Colors.black,
-          fontWeight: fontWeight),
-    );
-  }
-}
-
-class SubtitleText extends StatelessWidget {
-  final String text;
-  final double? fontSize;
-  final Color? textColor;
-  final TextAlign? textAlign;
-  final int? maxLines;
-
-  const SubtitleText(
-      {required this.text,
-      this.fontSize,
-      this.textColor,
-      this.textAlign,
-      this.maxLines});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      maxLines: maxLines ?? 1,
-      overflow: TextOverflow.ellipsis,
-      textAlign: textAlign ?? TextAlign.start,
-      style: Theme.of(context).textTheme.headline2!.copyWith(
-          fontWeight: FontWeight.w800,
-          fontSize: fontSize != null
-              ? SizeConfig().sp(fontSize).toDouble()
-              : SizeConfig().sp(20).toDouble(),
-          color: textColor ?? Colors.black),
-    );
-  }
-}
-
-class AccentText extends StatelessWidget {
-  final String text;
-  final double? fontSize;
-  final Color? textColor;
-  final TextAlign? textAlign;
-  final int? maxLines;
-  final FontWeight? fontWeight;
-
-  const AccentText(
-      {required this.text,
-      this.fontSize,
-      this.textColor,
-      this.textAlign,
-      this.fontWeight,
-      this.maxLines});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      maxLines: maxLines ?? 1,
-      overflow: TextOverflow.ellipsis,
-      textAlign: textAlign ?? TextAlign.start,
-      style: Theme.of(context).textTheme.headline3!.copyWith(
-          fontWeight: fontWeight,
-          fontSize: fontSize != null
-              ? SizeConfig().sp(fontSize).toDouble()
-              : SizeConfig().sp(15).toDouble(),
-          color: textColor ?? Colors.black),
+      style: TextStyle(
+        color: textColor ?? Colors.black,
+        fontFamily: fontFamily,
+        fontWeight: fontWeight,
+        letterSpacing: letterSpacing,
+        height: lineHeight,
+        decoration: decoration,
+        fontSize: fontSize
+      )
     );
   }
 }
