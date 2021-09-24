@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neo_reusables/neo_reusables.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Builder(builder: (context) {
+        final Size size = MediaQuery.of(context).size;
+        SizeConfig.init(context,
+            width: size.width, height: size.height, allowFontScaling: true);
+
+        return const MyHomePage(title: 'Flutter Demo Home Page');
+      }),
     );
   }
 }
@@ -47,12 +54,22 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            //NeoText wrapper
+            NeoText(
+              text: "Your counter: $_counter",
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            //Vertical Margin
+            const YMargin(height: 10),
+            Row(
+              children: [
+                //Horizontal Margin
+                const XMargin(width: 20),
+                //Button Wrapper
+                NeoButton(
+                  onClick: () {},
+                  text: 'Tap',
+                ),
+              ],
             ),
           ],
         ),

@@ -32,8 +32,8 @@ import 'package:neo_reusables/neo_reusables.dart';
 ```
 
 ## Usage
-
- ### NeoButton
+Note: The examples folder will provider more use-cases and more complex uses
+### NeoButton
 
 ```dart
 NeoButton(
@@ -41,3 +41,84 @@ NeoButton(
 )
 ```
 
+### SizeConfig
+
+- First initialize the SizeConfig file in your main file like this:
+
+```dart
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Builder(builder: (context) {
+        final Size size = MediaQuery.of(context).size;
+        SizeConfig.init(context,
+            width: size.width, height: size.height, allowFontScaling: true);
+
+        return const MyHomePage(title: 'Flutter Demo Home Page');
+      }),
+    );
+  }
+}
+
+```
+
+- Then use it to generate scalable heights and widths like so
+
+```dart
+
+    final SizeConfig sizeConfig = SizeConfig();
+
+    //Scalable height
+    sizeConfig.sh(20).toDouble()
+
+    //Scalable width
+    sizeConfig.sw(20).toDouble()
+
+```
+
+### NeoButton
+The `onClick` and `text` fields are required
+
+```dart
+    NeoButton(
+        onClick: () {},
+        text: 'Tap',
+    )
+
+```
+
+### NeoText
+The `text` field is required
+
+```dart
+    NeoText(
+        text: "Your text",
+    )
+
+```
+
+### YMargin
+Provides vertical spacing in your UI
+
+
+```dart
+    YMargin(height: 10)
+
+```
+
+### XMargin
+Provides horizontal spacing in your UI
+
+
+```dart
+    XMargin(height: 10)
+
+```
