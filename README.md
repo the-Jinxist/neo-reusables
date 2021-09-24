@@ -33,12 +33,22 @@ import 'package:neo_reusables/neo_reusables.dart';
 
 ## Usage
 Note: The examples folder will provider more use-cases and more complex uses
-### NeoButton
+### Resource
 
 ```dart
-NeoButton(
-    
-)
+    //First create the Resource and specify the type, in this case UserModel will be our hypothetical model
+    //Here, we'll set the resource to it's initial state, IDLE
+    Resource<UserModel> resource = Resource.idle();
+
+    //To show the loading state of your operation
+    resource = Resource.loading();
+
+    // To show the error state of your operation
+    resource = Resource.failed("Error message goes here");
+
+    //To show success state of your operation
+    final UserModel userModel = UserModel.fromJson(json);
+    resource = Resource.success(userModel);
 ```
 
 ### SizeConfig
