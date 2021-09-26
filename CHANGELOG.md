@@ -1,3 +1,5 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+### Genesis Release
+
+This release is the very first version of this package, `example` code will be fleshed out soon and appropriated UI tests will be worked on ASAP

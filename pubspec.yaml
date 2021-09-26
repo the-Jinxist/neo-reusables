@@ -1,6 +1,7 @@
 name: neo_reusables
 description: A Dart package for all Neo's reusables
 version: 1.0.0
+author: Favour Olukayode <nerosilva522@gmail.com>
 homepage: https://github.com/the-Jinxist/neo-reusables.git
 
 environment:
