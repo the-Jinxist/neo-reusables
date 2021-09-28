@@ -69,18 +69,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 const XMargin(width: 20),
                 //Button Wrapper
                 NeoButton(
-                  onClick: () {},
+                  onClick: () {
+                    _incrementCounter();
+                  },
                   text: 'Tap',
                 ),
               ],
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
