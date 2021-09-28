@@ -5,19 +5,51 @@ import 'package:neo_reusables/src/widgets/texts.dart';
 
 final SizeConfig config = SizeConfig();
 
+///A simplm wrapper over the [Container] class,
+///P.S It uses the config class for it's height and width so make sure to initialize the config class
+///in the [main.dart] file first
 class NeoButton extends StatelessWidget {
+  ///The height of the NeoButton, default is `45`
   final double? height;
+
+  ///The width of the NeoButton , defaukt is `150`
   final double? width;
+
+  ///This function contains the action taken when the button is clicked on
   final Function onClick;
+
+  ///Specifies the text that shows in the middle of the button. The text widget is shown using the
+  ///other reusable widget[NeoText]
   final String text;
+
+  ///Adjusted the radius of the button. The default radius is `10`
   final double? radius;
+
+  ///Specifies the color of the button. The default color is [colorScheme.secondaryColor]
   final Color? buttonColor;
+
+  ///Adjusted the text color of the text in the color. The default color is [Colors.white]
   final Color? textColor;
+
+  ///Shows the loading state of whatever operation is started when the button is clicked.
+  ///The default value is [false]
   final bool isLoading;
+
+  ///Adjusts the value color of the [CircularProgressIndicator] that instantiates in the center
+  ///of the button when [isLoading] is correct
   final Color? progressColor;
+
+  ///Adjusts the text size of the text in the button
   final double? textSize;
+
+  ///Adjusts the font weight of the text in the button
   final FontWeight? fontWeight;
+
+  ///When [isOutine] is true, it adds a border to the corners of the button then the [borderColor]
+  ///attributes can be used to change the color of the border
   final bool isOutline;
+
+  ///Changes borderColor when [isOutline] is true
   final Color? borderColor;
 
   const NeoButton({

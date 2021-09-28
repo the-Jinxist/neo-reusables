@@ -11,16 +11,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Neo Reusables Example',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Builder(builder: (context) {
+        ///SizeConfig should be initialized in a builder like such
+        ///The is so you can get the context on first app run and also the screen width/size
+        ///It is also popular to use the screen sizes created by the your designer in Figma, XD etc
         final Size size = MediaQuery.of(context).size;
         SizeConfig.init(context,
             width: size.width, height: size.height, allowFontScaling: true);
 
-        return const MyHomePage(title: 'Flutter Demo Home Page');
+        return const MyHomePage(title: 'Neo Reusables Home Page');
       }),
     );
   }
