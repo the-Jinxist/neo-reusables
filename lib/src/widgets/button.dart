@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:neo_reusables/src/commons/size_config.dart';
-import 'package:neo_reusables/src/widgets/texts.dart';
+import 'package:neo_reusables/src/widgets/text.dart';
 
 final SizeConfig config = SizeConfig();
 
