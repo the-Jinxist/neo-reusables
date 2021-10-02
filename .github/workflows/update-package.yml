@@ -22,36 +22,28 @@ jobs:
       # Use the standard Java Action to setup Java
       # With gives us a way to pass parameters to an action in this case: actions/setup-java@v1
     - uses: actions/setup-java@v1
-
-      #Setting up dart
-    - name: Setup Dart
-      uses: dart-lang/setup-dart@v1
-
-      # Analyzing project
-    - name: Analyze Project Source
-      run: dart analyze
-
-      # Installing Pub Stuff
-    - name: Install Pub Dependencies
-      run: dart pub get
       with:
         # we want the latest Java 12
         java-version: '12.x'
 
+      #Setting up dart
+    - name: Setup Dart
+      uses: dart-lang/setup-dart@v1
+      
       # Use the community Action to install Flutter
     - uses: subosito/flutter-action@v1
       with:
         # we want the stable channel
-        flutter-version: '1.22.5'
+        flutter-version: '2.5.0'
         channel: 'stable'
 
     # Get Flutter Packages
     - name: Get All Flutter Packages
       run: flutter pub get
 
-    # Build Yay!
-    - name: Build Flutter APK
-      run: flutter build apk
+      # Analyzing project
+    - name: Analyze Project Source
+      run: dart analyze
 
     # Update Package
     - name: Publish Update
