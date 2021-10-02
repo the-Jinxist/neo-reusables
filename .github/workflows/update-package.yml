@@ -29,11 +29,7 @@ jobs:
       #Setting up dart
     - name: Setup Dart
       uses: dart-lang/setup-dart@v1
-
-      # Analyzing project
-    - name: Analyze Project Source
-      run: dart analyze
-
+    
       # Installing Pub Stuff
     - name: Install Pub Dependencies
       run: dart pub get
@@ -48,6 +44,10 @@ jobs:
     # Get Flutter Packages
     - name: Get All Flutter Packages
       run: flutter pub get
+
+      # Analyzing project
+    - name: Analyze Project Source
+      run: dart analyze
 
     # Build Yay!
     - name: Build Flutter APK
