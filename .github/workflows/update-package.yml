@@ -29,10 +29,6 @@ jobs:
       #Setting up dart
     - name: Setup Dart
       uses: dart-lang/setup-dart@v1
-    
-      # Installing Pub Stuff
-    - name: Install Pub Dependencies
-      run: dart pub get
       
       # Use the community Action to install Flutter
     - uses: subosito/flutter-action@v1
