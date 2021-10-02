@@ -45,10 +45,6 @@ jobs:
     - name: Analyze Project Source
       run: dart analyze
 
-    # Build Yay!
-    - name: Build Flutter APK
-      run: flutter build apk
-
     # Update Package
     - name: Publish Update
       run: dart pub publish
