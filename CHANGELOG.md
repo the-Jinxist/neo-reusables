@@ -9,3 +9,9 @@ This release is the very first version of this package, `example` code will be f
 ### Added more documentation
 
 Worked on fleshing out the documentation for the already implemented re-usables in the project
+
+## 1.0.2
+
+### Improved Pub Points
+
+Applied code practices suggested by pub analyzer to get more pub points
