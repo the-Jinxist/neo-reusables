@@ -1,6 +1,6 @@
 name: neo_reusables
 description: A Dart package for all Neo's reusables. It features mostly wrappers on already implemented Flutter widgets and other constructs to help you write better code.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/the-Jinxist/neo-reusables.git
 
 environment:
